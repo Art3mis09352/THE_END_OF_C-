@@ -1,0 +1,14 @@
+﻿@model IEnumerable<THE_END_OF_C_.Models.TRELATION>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h2>Список пользователей <a asp-action="Index_TRELATION">список отношений</a> <a asp-action="Index_TPROPERTY">список свойств</a></h2>
+<p><a asp-action="Create">Добавить пользователя</a></p>
+<table class="table">
+    <tr><th>родитель</th><th>ребенок</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id_parent</td>
+            <td>@item.id_child</td>
+        </tr>
+    }
+</table>

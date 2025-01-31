@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    
+}
+@model IEnumerable<THE_END_OF_C_.Models.TGROUP>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h2>Список пользователей <a asp-action="Index_TRELATION">список отношений</a> <a asp-action="Index_TPROPERTY">список свойств</a></h2>
+<p><a asp-action="Create">Добавить пользователя</a></p>
+<table class="table">
+    <tr><th>Имя</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.Id">Изменить</a>
+            </td>
+            <td>
+                <form asp-controller="Home" asp-action="Delete" method="post" asp-route-id="@item.Id">
+                    <input type="submit" value="Удалить" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>

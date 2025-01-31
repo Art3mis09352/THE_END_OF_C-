@@ -1,0 +1,12 @@
+﻿@model THE_END_OF_C_.Models.TGROUP
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h2>Редактирование пользователя</h2>
+<form asp-action="edit" asp-controller="home" asp-route-id="@Model.Id">
+    <p>
+        <label asp-for="Name">Имя</label><br />
+        <input type="text" asp-for="Name" />
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+</form>

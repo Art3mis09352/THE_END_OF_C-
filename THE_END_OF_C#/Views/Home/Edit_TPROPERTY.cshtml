@@ -1,0 +1,22 @@
+﻿@model THE_END_OF_C_.Models.TPROPERTY
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h2>Редактирование пользователя</h2>
+<form asp-action="Edit_TPROPERTY" asp-controller="Home" asp-route-id="@Model.id_prop">
+
+    <p><input type="hidden" asp-for="id_prop" /></p>
+    <p>
+        <label asp-for="prop_name">Имя</label><br />
+        <input type="text" asp-for="prop_name" />
+    </p>
+    <p>
+        <label asp-for="value">значение</label><br />
+        <input type="text" asp-for="value" />
+    </p>
+    <p>
+        <label asp-for="group_id">id группы</label><br />
+        <input type="text" asp-for="group_id" />
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+</form>

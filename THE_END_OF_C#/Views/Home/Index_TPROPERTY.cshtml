@@ -1,0 +1,25 @@
+﻿@model IEnumerable<THE_END_OF_C_.Models.TPROPERTY>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h2><a asp-action="Index_TGROUP">Список пользователей</a> <a asp-action="Index_TRELATION">список отношений</a> список свойств</h2>
+<p><a asp-action="Create_TPROPERTY">Добавить свойство</a></p>
+<table class="table">
+    <tr><th>ID</th><th>Имя</th> <th>значение</th> <th>id группы</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id_prop</td>
+            <td>@item.prop_name</td>
+            <td>@item.value</td>
+            <td>@item.group_id</td>
+            <td>
+                <a asp-action="Edit_TPROPERTY" asp-controller="Home" asp-route-id="@item.id_prop">Изменить</a>
+            </td>
+            <td>
+                <form asp-controller="Home" asp-action="Delete_TPROPERTY" method="post" asp-route-id="@item.id_prop">
+
+                    <input type="submit" value="Удалить" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
